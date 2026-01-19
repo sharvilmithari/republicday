@@ -1,97 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>🇮🇳 Happy Republic Day 🇮🇳</title>
+<meta charset="UTF-8">
+<title>🇮🇳 Happy Republic Day 🇮🇳</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(orange, white, green);
-    }
+<style>
+body{
+  margin:0;
+  text-align:center;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(orange,white,green);
+  overflow-x:hidden;
+}
 
-    h1 {
-      margin-top: 30px;
-      font-size: 34px;
-    }
+h1{
+  margin-top:20px;
+  font-size:34px;
+}
 
-    marquee {
-      background: yellow;
-      padding: 10px;
-      font-size: 18px;
-    }
+marquee{
+  background:yellow;
+  padding:10px;
+  font-size:18px;
+}
 
-    .chakra {
-      width: 120px;
-      height: 120px;
-      border: 6px solid blue;
-      border-radius: 50%;
-      margin: 20px auto;
-      animation: spin 2s linear infinite;
-    }
+.chakra{
+  width:120px;
+  height:120px;
+  border:6px solid blue;
+  border-radius:50%;
+  margin:20px auto;
+  animation:spin 2s linear infinite;
+}
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
+@keyframes spin{
+  to{transform:rotate(360deg);}
+}
 
-    video {
-      width: 90%;
-      max-width: 600px;
-      border: 5px solid green;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
+video{
+  width:90%;
+  max-width:600px;
+  border:5px solid green;
+  border-radius:10px;
+}
 
-    button {
-      margin: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background: green;
-      color: white;
-      border: none;
-      border-radius: 5px;
-    }
+/* Modi */
+.modi{
+  width:140px;
+  margin-top:20px;
+  animation:rotateModi 4s linear infinite;
+}
 
-    footer {
-      margin-top: 30px;
-      padding: 15px;
-      background: black;
-      color: white;
-      font-size: 14px;
-    }
-  </style>
+@keyframes rotateModi{
+  to{transform:rotate(360deg);}
+}
+
+/* Tank */
+.tank{
+  position:fixed;
+  bottom:0;
+  left:-220px;
+  width:220px;
+  animation:tankMove 10s linear infinite;
+}
+
+@keyframes tankMove{
+  0%{left:-220px;}
+  50%{left:30%;}
+  100%{left:-220px;}
+}
+
+footer{
+  margin-top:40px;
+  padding:15px;
+  background:black;
+  color:white;
+  font-size:14px;
+}
+</style>
 </head>
 
 <body>
 
-  <h1>🇮🇳 HAPPY REPUBLIC DAY 🇮🇳</h1>
+<h1>🇮🇳 HAPPY REPUBLIC DAY 🇮🇳</h1>
 
-  <marquee>🇮🇳 MERA BHARAT MAHAN 🇮🇳 JAI HIND 🇮🇳 VANDE MATARAM 🇮🇳</marquee>
+<marquee>🇮🇳 MERA BHARAT MAHAN 🇮🇳 JAI HIND 🇮🇳 VANDE MATARAM 🇮🇳</marquee>
 
-  <div class="chakra"></div>
+<div class="chakra"></div>
 
-  <!-- VIDEO -->
-  <video controls>
-    <source src="video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<!-- VIDEO -->
+<video autoplay muted loop playsinline>
+  <source src="video.mp4" type="video/mp4">
+</video>
 
-  <!-- MUSIC -->
-  <audio id="music" loop>
-    <source src="song.mp3" type="audio/mpeg">
-  </audio>
+<!-- MUSIC (AUTOPLAY MUTED) -->
+<audio id="music" autoplay loop muted>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
 
-  <br>
-  <button onclick="document.getElementById('music').play()">
-    ▶️ Play Patriotic Music
-  </button>
+<p>🔊 Tap anywhere to enable sound</p>
 
-  <footer>
-    Made with 🇮🇳 by Sharvil
-  </footer>
+<!-- IMAGES -->
+<img src="modi.png" class="modi" alt="Modi">
+<img src="tank.png" class="tank" alt="Tank">
+
+<footer>
+Made with 🇮🇳 by Sharvil
+</footer>
+
+<script>
+/* Enable sound on first touch */
+document.body.addEventListener("click", () => {
+  const music = document.getElementById("music");
+  music.muted = false;
+  music.play();
+});
+</script>
 
 </body>
 </html>
