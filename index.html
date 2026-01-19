@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🇮🇳 Happy Republic Day 🇮🇳</title>
+<title>🇮🇳 Republic Day Special 🇮🇳 v2</title>
 
 <style>
 body{
@@ -13,17 +13,20 @@ body{
   overflow-x:hidden;
 }
 
+/* Heading */
 h1{
   margin-top:20px;
   font-size:34px;
 }
 
+/* Marquee */
 marquee{
   background:yellow;
   padding:10px;
   font-size:18px;
 }
 
+/* Chakra */
 .chakra{
   width:120px;
   height:120px;
@@ -37,17 +40,20 @@ marquee{
   to{transform:rotate(360deg);}
 }
 
+/* Video */
 video{
   width:90%;
   max-width:600px;
   border:5px solid green;
   border-radius:10px;
+  margin-top:20px;
 }
 
-/* Modi */
+/* MODI – clearly visible & rotating */
 .modi{
   width:140px;
-  margin-top:20px;
+  margin:20px auto;
+  display:block;
   animation:rotateModi 4s linear infinite;
 }
 
@@ -55,23 +61,22 @@ video{
   to{transform:rotate(360deg);}
 }
 
-/* Tank */
+/* TANK – clearly visible & moving */
 .tank{
-  position:fixed;
-  bottom:0;
-  left:-220px;
   width:220px;
-  animation:tankMove 10s linear infinite;
+  display:block;
+  margin:20px auto;
+  animation:tankMove 6s linear infinite;
 }
 
 @keyframes tankMove{
-  0%{left:-220px;}
-  50%{left:30%;}
-  100%{left:-220px;}
+  0%{transform:translateX(-120px);}
+  50%{transform:translateX(120px);}
+  100%{transform:translateX(-120px);}
 }
 
 footer{
-  margin-top:40px;
+  margin-top:30px;
   padding:15px;
   background:black;
   color:white;
@@ -93,27 +98,29 @@ footer{
   <source src="video.mp4" type="video/mp4">
 </video>
 
-<!-- MUSIC (AUTOPLAY MUTED) -->
+<!-- AUTO MUSIC (mobile-safe) -->
 <audio id="music" autoplay loop muted>
   <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <p>🔊 Tap anywhere to enable sound</p>
 
-<!-- IMAGES -->
-<img src="modi.png" class="modi" alt="Modi">
-<img src="tank.png" class="tank" alt="Tank">
+<!-- MODI -->
+<img src="modi.png" class="modi" alt="Modi Image">
+
+<!-- TANK -->
+<img src="tank.png" class="tank" alt="Tank Image">
 
 <footer>
 Made with 🇮🇳 by Sharvil
 </footer>
 
 <script>
-/* Enable sound on first touch */
-document.body.addEventListener("click", () => {
-  const music = document.getElementById("music");
-  music.muted = false;
-  music.play();
+/* Enable sound on first tap */
+document.body.addEventListener("click",()=>{
+  const m=document.getElementById("music");
+  m.muted=false;
+  m.play();
 });
 </script>
 
